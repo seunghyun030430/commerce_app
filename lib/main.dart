@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:commerce_app/constants.dart';
+import 'package:commerce_app/routes.dart';
+import 'package:commerce_app/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
@@ -23,7 +26,9 @@ class MyApp extends StatelessWidget {
             bodyText2: TextStyle(color: kTextColor)),
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: splashScreen(),
+      initialRoute: splashScreen.routeName,
+      routes: routes,
     );
   }
 }
